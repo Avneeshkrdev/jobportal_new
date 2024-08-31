@@ -21,6 +21,8 @@ const allowedOrigins = [
     process.env.FRONTEND_URL || 'http://localhost:5173', // Use FRONTEND_URL from the environment
     'https://jobportal-uixz.onrender.com',
     'https://jobportal-snowy.vercel.app',
+    'https://jobportal-new-six.vercel.app',
+    'https://jobportal-new-pres.vercel.app',
      process.env.BACKEND_URL || 'http://localhost:8000'
   ];
   
