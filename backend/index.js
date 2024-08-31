@@ -17,9 +17,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
-// Allowed origins
-const allowedOrigins = ['http://localhost:5173', 'https://jobportal-uixz.onrender.com', 'https://jobportal-snowy.vercel.app','http://localhost:8000']; // Add your allowed origins here
-
+const allowedOrigins = [
+    process.env.FRONTEND_URL || 'http://localhost:5173', // Use FRONTEND_URL from the environment
+    'https://jobportal-uixz.onrender.com',
+    'https://jobportal-snowy.vercel.app',
+     process.env.BACKEND_URL || 'http://localhost:8000'
+  ];
+  
 const corsOptions = {
     origin: (origin, callback) => {
         if (!origin || allowedOrigins.includes(origin)) {
